@@ -1,0 +1,26 @@
+html {
+  display: table;
+  margin: auto;
+  font-family: Arial;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+body {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  background-color: #001a3e;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 72px;
+  margin: 10px;
+}

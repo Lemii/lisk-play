@@ -1,0 +1,246 @@
+html {
+  display: table;
+  margin: auto;
+  font-family: Arial;
+  font-size: 16px;
+}
+
+body {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  background-color: #001a3e;
+  color: #F0F0F0;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.smallhidden {
+  font-size: 12px;
+  display: none;
+}
+
+.wrapper {
+  background: linear-gradient(45deg, #17499B 0%, #3C7FB4 100%);
+  border: 1px solid black;
+  /* padding: 40px; */
+  width: 700px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.content {
+  background-color: #ffffff;
+  padding: 10px;
+  color: #282828;
+  border-radius: 6px;
+  margin: 24px;
+}
+
+.faq {
+  background-color: #ffffff;
+  padding: 40px;
+  padding-top: 10px;
+  color: #000000;
+  border-radius: 6px;
+  margin: 24px;
+}
+
+.question {
+  font-style: italic;
+  font-weight: bold;
+  text-align: left;
+}
+
+.justify {
+  text-align: justify;
+  font-size: 14px;
+}
+
+ul, ol {
+  text-align: left;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 72px;
+  margin: 10px;
+}
+
+.winner {
+  font-weight: bold;
+  -webkit-animation: colorchange 1s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    color: #FFFFFF;
+  }
+
+  100% {
+    color: #FF6236;
+  }
+}
+
+a {
+  color: #FF6236;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.faqlink {
+  text-align: center;
+}
+
+a:hover {
+  color: #ff8d6d;
+}
+
+.bet {
+  font-weight: bold;
+  font-size: 50px;
+  border: None;
+}
+
+.betField {
+  font-weight: bold;
+  font-size: 50px;
+  border: None;
+  text-align: right;
+  width: 160px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: linear-gradient(224deg, #FF6236 14%, #C80039 100%);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: url('assets/button.png');
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: url('assets/button.png');
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  padding: 6px;
+  font-size: 14px;
+  width: 33%;
+}
+
+.row:nth-of-type(odd) {
+  background: #f8f8f8;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  border: 2px solid #000000;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #000000;
+  color: white;
+}
+
+.button:disabled {
+  border-radius: 4px;
+  background-color: white;
+  color: #808080;
+  border: 2px solid #e0e0e0;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+canvas {
+  display: inline;
+  text-align: center;
+}
+
+#overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: block;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+}
+
+#overlaycontent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
