@@ -4,7 +4,7 @@ const network = 'testnet';
 // Set contest parameters
 const betFee = 1; // The cost of each bet (in LSK)
 const minBet = 10; // The mininum value of the prediction
-const maxBet = 10000; // The maximum value of the prediction
+const maxBet = 5000; // The maximum value of the prediction
 const betAddres = '666L'; // Address that is created for the contest
 const bonusCap = 50; // Maximum provided bonus (in LSK)
 const startingDate = '2019/01/01';

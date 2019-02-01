@@ -30,7 +30,7 @@ function initPage() {
 
 
 function roundValue(amount) {
-  const roundTo = 10;
+  const roundTo = 2;
   return Math.round(amount / roundTo) * roundTo;
 }
 
