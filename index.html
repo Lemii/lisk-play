@@ -13,62 +13,80 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript" src="js/chart.js"></script>
-  <title>Lisk Bet!</title>
+  <title>Lisk Play! 🎮</title>
 </head>
 
 <body>
 
   <div id="pagewrapper">
-    <h1 class="title" onclick="showContent()">Lisk Bet!</h1>
+    <h1 class="title" onclick="showContent()">🎮 Lisk Play! 🎮</h1>
     <br />
-    Current prize: <strong><span id="prize1">0 LSK</span></strong> | Submission deadline <strong><span id="deadlineDate">2019/XX/XX</span></strong> | <strong><a onclick="showFAQ()">FAQ</a></strong>
+    Current prize: <strong><span id="prize1">0 LSK</span></strong> | Submission deadline <strong><span id="deadlineDate">2019/XX/XX</span></strong> | <strong><a onclick="showFAQ()">FAQ / Disclaimer</a></strong>
     <br /> <br />
 
     <div class="wrapper">
 
       <div class="faq">
+        <h2>⚠️ Disclaimer ⚠️</h2>
+        <a class="faqlink" onclick="showContent()">Go Back</a><br /><br />
+        <div class="justify">
+          This is entirely a community initiative and has no affiliation to Lisk HQ, Lightcurve or the Lisk Foundation.<br />
+          <br />
+          By sending 1 LSK for a contest prediction, the participant is agreeing to waive all rights to this 1 LSK. The total value of all the 1 LSK predictions submitted (plus sponsor bonuses) will be awarded to the nearest estimate as defined by
+          the
+          terms set out in the rules on lisktools.eu/liskplay.<br />
+          <br />
+          Other considerations:
+          <ul>
+            <li>
+              The organizers will make no profit.</li>
+            <li>BTC price estimation is considered to be based TA skill.</li>
+            <li>The participation value associated with one guess is considered trivial.</li>
+          </ul>
+        </div>
+        <br />
         <h2>Frequently Asked Questions</h2>
         <a class="faqlink" onclick="showContent()">Go Back</a><br /><br />
         <div class="justify">
           <span class="question">How does this thing work?</span><br /><br />
-          <span class="answer">The goal of this contest is to predict the price of Bitcoin on <span id="faqPredictionDate"></span> (opening price of the day). The bet closest to the price wins.</span><br /><br /><br />
+          <span class="answer">The goal of this contest is to predict the price of Bitcoin on <span id="faqPredictionDate"></span> (opening price of the day). The prediction closest to the price wins.</span><br /><br /><br />
 
-          <span class="question">How do I place a bet?</span><br /><br />
-          <span class="answer">To place a bet, simply move the slider to your desired amount (or enter a value manually), and click 'Submit'.<br /><br />
+          <span class="question">How do I submit my prediction?</span><br /><br />
+          <span class="answer">To submit a prediction, simply move the slider to your desired amount (or enter a value manually), and click 'Submit'.<br /><br />
             If you have a Lisk wallet installed (eg: Lisk Hub, Lisk Nano, Liskish Wallet), it will automatically open with the recipient, reference and amount fields pre-populated.</span><br /><br /><br />
 
-          <span class="question">Can I manually submit a bet without using the website?</span><br /><br />
+          <span class="question">Can I manually submit a prediction without using the website?</span><br /><br />
           <span class="answer">Yes, you can. Please use the following info:<br /><br />
             <span class="small">
               Recipient: <span id="faqbetAddress"></span><br />
-              Reference: Your bet (examples: $6510, $2400, $3000, etc. Other formats are not allowed)<br />
+              Reference: Your prediction (examples: $6510, $2400, $3000, etc. Other formats are not allowed)<br />
               Amount: <span id="faqBetAmount"></span> LSK
             </span><br /><br />
-            One bet per account!
+            One prediction per account!
           </span><br /><br /><br />
 
-          <span class="question">What happens if I submit multiple bets from one account?</span><br /><br />
-          <span class="answer">The bet that was first submitted will count.</span><br /><br /><br />
+          <span class="question">What happens if I submit multiple predictions from one account?</span><br /><br />
+          <span class="answer">The prediction that was first submitted will count.</span><br /><br /><br />
 
-          <span class="question">What happens if I submit a bet that was already placed by someone else?</span><br /><br />
-          <span class="answer">The bet that was first submitted will count.<br /><br />
-            <span class="small">(This can only happen when you manually place a bet, since the form on the website validates each submission)</span>
+          <span class="question">What happens if I submit a prediction that was already placed by someone else?</span><br /><br />
+          <span class="answer">The prediction that was first submitted will count.<br /><br />
+            <span class="small">(This can only happen when you manually submit a prediction, since the form on the website validates each submission)</span>
           </span><br /><br /><br />
 
-          <span class="question">What happens if I submit a bet with a different LSK amount?</span><br /><br />
-          <span class="answer">Bets with less than 1 LSK will be considered invalid. However, the LSK amount that is sent will be added to the jackpot.<br /><br />
-            Bets with more than 1 LSK will act as regular bets. The excess LSK will also be added to the jackpot.<br /><br />
-            <span class="small">(This can only happen when you manually place a bet, since the form on the website automatically configures the correct amount)</span>
+          <span class="question">What happens if I submit a prediction with a different LSK amount?</span><br /><br />
+          <span class="answer">Submissions placed with less than 1 LSK will be considered invalid. However, the LSK amount that is sent will be added to the jackpot.<br /><br />
+            Submissions placed with more than 1 LSK will behave as regular predictions. The excess LSK will also be added to the jackpot.<br /><br />
+            <span class="small">(This can only happen when you manually submit a prediction, since the form on the website automatically configures the correct amount)</span>
           </span><br /><br /><br />
 
           <span class="question">Why does the size of the jackpot mutate?</span><br /><br />
-          <span class="answer">The jackpot increases with each bet that is placed. On top of that, additional bonusses may be active (provided by sponsors).</span><br /><br /><br />
+          <span class="answer">The jackpot increases with each prediction that is placed. On top of that, additional bonusses may be active (provided by sponsors).</span><br /><br /><br />
 
           <span class="question">Are you making money off this?</span><br /><br />
-          <span class="answer">No, Lisk Bet! is a community effort.</span><br /><br /><br />
+          <span class="answer">No, Lisk Play! is a community effort.</span><br /><br /><br />
 
           <span class="question">Are you affiliated to LiskHQ?</span><br /><br />
-          <span class="answer">No, Lisk Bet! is in no way or form affiliated with LiskHQ or Lightcurve.</span><br /><br /><br />
+          <span class="answer">No, Lisk Play! is in no way or form affiliated with LiskHQ or Lightcurve. See the full disclaimer for more info.</span><br /><br /><br />
         </div>
         <a onclick="showContent()">Go Back</a>
 
@@ -76,21 +94,21 @@
 
       <div class="content">
         <h3>Predict the price of Bitcoin on <span id="predictionDate1">2019/XX/XX</span> (00:00 UTC)<br />
-          and win the jackpot!</h3>
+          and win the jackpot! 🏆</h3>
         <h2>Rules</h2>
         <ul>
           <li>Opening price of Bitcoin on <span id="predictionDate2">2019/XX/XX</span> according to <a href="https://coinmarketcap.com/currencies/bitcoin/historical-data/" target="_blank">CoinMarketCap</a></li>
-          <li>Bet closest to the price will win</li>
-          <li>One LSK per bet</li>
-          <li>One bet per account</li>
-          <li>In the case of a duplicate prediction and/or account, first bet counts</li>
+          <li>Prediction closest to the price will win</li>
+          <li>One LSK per submission</li>
+          <li>One submission per account</li>
+          <li>In the case of a duplicate prediction and/or account, first submission counts</li>
           <li>Jackpot consists out of all accumulated bets + sponsored LSK</li>
           <li>Account must have been active before <span id="startingDate">2019/XX/XX</span></li>
         </ul>
       </div>
 
       <div class="content">
-        <h2>Submit your bet</h2>
+        <h2>Submit your prediction 🚀</h2>
         <div class="bet">
           $<input type="number" class="betField" id="betAmount"></input>
         </div>
@@ -107,7 +125,7 @@
       </div>
 
       <div class="content">
-        <h2>Recent Submissions</h2>
+        <h2>Recent Submissions 📜</h2>
 
         <div class="row">
           <div class="column">
@@ -127,7 +145,7 @@
       </div>
 
       <div class="content">
-        <h2>Betting Trends</h2>
+        <h2>Betting Trends 📊</h2>
         <div class="row" id="loadingMessage2">Loading...</div>
         <div class="chart-container" style="text-align:center; height: 575px; width:575px">
           <canvas id="myChart" width="100" height="100"></canvas>
@@ -137,7 +155,7 @@
     </div>
     <br />
 
-    <span class="small"><strong>Lisk Bet!</strong> is in no way or form affiliated with LiskHQ or Lightcurve<br />
+    <span class="small">This is entirely a community initiative and has no affiliation to Lisk HQ, Lightcurve or the Lisk Foundation (<a onclick="showFAQ()">full disclaimer</a>)<br />
       Site created by <a href="https://explorer.lisk.io/delegate/5222060513855166167L" target="_blank">lemii</a> | Bonus LSK kindly provided by <a href="https://explorer.lisk.io/address/7292106026137978431L" target="_blank">StellarDynamic</a>
     </span>
   </div>

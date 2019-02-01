@@ -67,8 +67,8 @@ function setupSlider() {
     const submitButton = document.getElementById("submitButton");
     const deadlinePassed = document.getElementById("deadlinePassed");
     submitButton.disabled = true;
-    deadlinePassed.innerHTML = `<br />IMPORTANT!<br />The deadline has passed and bets are closed.
-                                Bets that are submitted manually after the deadline date will be considered invalid.`
+    deadlinePassed.innerHTML = `<br />IMPORTANT!<br />The deadline has passed and submissions are closed.
+                                Predictions that are submitted manually after the deadline date will be considered invalid.`
   }
 }
 
@@ -254,9 +254,9 @@ function closeContest(submissions) {
   submissionList = submissionList.sort(compare_diffs)
   const overlayContent = document.getElementById("overlaycontent");
   overlayContent.innerHTML = `
-										<h2>THE DEADLINE HAS PASSED AND BETS ARE CLOSED!</h2>
+										<h2>THE DEADLINE HAS PASSED AND SUBMISSIONS ARE CLOSED!</h2>
                     <br /><br />
-										<h1 class="winner">Winning bet:<br />
+										<h1 class="winner">Winning prediction:<br />
 										<img src="assets//party02_medium.png" /> ${submissionList[0].prediction} <img src="assets//party02_medium.png" /></h1>
                     <span class="winner">by ${submissionList[0].account}</span><br /><br /><br /><br />
 
