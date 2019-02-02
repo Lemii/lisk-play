@@ -1,7 +1,8 @@
 function generateChart(validSubmissions) {
+  const roundTo = 500;
   const entries = validSubmissions.map(x => Number(x.prediction.substring(1)));
-  const min = 1000 * Math.floor(Math.min.apply(null, entries) / 1000);
-  const max = 1000 * Math.ceil(Math.max.apply(null, entries) / 1000);
+  const min = roundTo * Math.floor(Math.min.apply(null, entries) / roundTo);
+  const max = roundTo * Math.ceil(Math.max.apply(null, entries) / roundTo);
   const numOfBars = 8;
   const barColors = ["#fdc341", "#145dd2", "#ffcab8", "#648fb3", "#927988", "#32d96f", "#7981fb", "#0ea9ef", "#09837a", "#7e3b93"];
 
@@ -36,7 +37,7 @@ function generateChart(validSubmissions) {
     data: {
       labels: dataset[0],
       datasets: [{
-        label: '# of bets in range',
+        label: '# of predictions in range',
         data: dataset[1],
         backgroundColor: dataset[2],
         borderWidth: 0
