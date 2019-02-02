@@ -85,12 +85,14 @@ function updateManualBetInfo(betValue = maxBet / 2) {
 function setupDates() {
   const predictionField1 = document.getElementById("predictionDate1");
   const predictionField2 = document.getElementById("predictionDate2");
-  const deadlineField = document.getElementById("deadlineDate");
+  const deadlineField1 = document.getElementById("deadlineDate1");
+  const deadlineField2 = document.getElementById("deadlineDate2");
   const startingField = document.getElementById("startingDate");
 
   predictionField1.innerHTML = predictionDate;
   predictionField2.innerHTML = predictionDate;
-  deadlineField.innerHTML = deadlineDate;
+  deadlineField1.innerHTML = deadlineDate;
+  deadlineField2.innerHTML = deadlineDate;
   startingField.innerHTML = startingDate;
 
 }
@@ -152,11 +154,11 @@ function fetchBaseUrl() {
 function submitBet() {
   const bettingPrediction = document.getElementById("betAmount").value;
   if (bettingPrediction > maxBet) {
-    alert('Bet too high!');
+    alert('Prediction too high!');
   } else if (bettingPrediction < minBet) {
-    alert('Bet too low!');
+    alert('Prediction too low!');
   } else if (placedBets.includes("$" + bettingPrediction)) {
-    alert(`Bet of  $${bettingPrediction} has already been placed by someone else!`)
+    alert(`Prediction of  $${bettingPrediction} has already been placed by someone else!`)
   } else {
     const paymentUrl = `lisk://wallet?recipient=${betAddres}&amount=${betFee}&reference=$${bettingPrediction}`
     window.open(paymentUrl, "_self")

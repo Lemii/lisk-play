@@ -21,7 +21,7 @@
   <div id="pagewrapper">
     <h1 class="title" onclick="showContent()">🎮 Lisk Play! 🎮</h1>
     <br />
-    Current prize: <strong><span id="prize1">0 LSK</span></strong> | Submission deadline <strong><span id="deadlineDate">2019/XX/XX</span></strong> | <strong><a onclick="showFAQ()">FAQ / Disclaimer</a></strong>
+    Current prize: <strong><span id="prize1">0 LSK</span></strong> | Submission deadline <strong><span id="deadlineDate1">2019/XX/XX</span></strong> | <strong><a onclick="showFAQ()">FAQ / Disclaimer</a></strong>
     <br /> <br />
 
     <div class="wrapper">
@@ -40,7 +40,7 @@
           <ul>
             <li>
               The organizers will make no profit.</li>
-            <li>BTC price estimation is considered to be based TA skill.</li>
+            <li>BTC price estimation is considered to be based on TA skill.</li>
             <li>The participation value associated with one guess is considered trivial.</li>
           </ul>
         </div>
@@ -98,11 +98,12 @@
         <h2>Rules</h2>
         <ul>
           <li>Opening price of Bitcoin on <span id="predictionDate2">2019/XX/XX</span> according to <a href="https://coinmarketcap.com/currencies/bitcoin/historical-data/" target="_blank">CoinMarketCap</a></li>
+          <li>Submission deadline is <span id="deadlineDate2">2019/XX/XX</span>
           <li>Prediction closest to the price will win</li>
           <li>One LSK per submission</li>
           <li>One submission per account</li>
           <li>In the case of a duplicate prediction and/or account, first submission counts</li>
-          <li>Jackpot consists out of all accumulated bets + sponsored LSK</li>
+          <li>Jackpot consists out of all accumulated submissions + sponsored LSK</li>
           <li>Account must have been active before <span id="startingDate">2019/XX/XX</span></li>
         </ul>
       </div>
@@ -145,7 +146,7 @@
       </div>
 
       <div class="content">
-        <h2>Betting Trends 📊</h2>
+        <h2>Prediction Trends 📊</h2>
         <div class="row" id="loadingMessage2">Loading...</div>
         <div class="chart-container" style="text-align:center; height: 575px; width:575px">
           <canvas id="myChart" width="100" height="100"></canvas>
