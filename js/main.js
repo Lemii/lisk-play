@@ -167,13 +167,14 @@ function submitBet() {
 
 
 function displaySubmission(ts, account, prediction) {
+  const baseUrl = fetchBaseUrl();
   const resultPage = document.getElementById("resultPage");
   const realTs = (ts + lisk.constants.EPOCH_TIME_SECONDS) * 1000;
   const time = new Date(realTs).toLocaleString();
 
   resultPage.innerHTML += `<div class="row mainrow">
                             <div class="column maincolumn"><span class="strong">${prediction}</span></div>
-                            <div class="column maincolumn">${account}</div>
+                            <div class="column maincolumn"><a href="${baseUrl}${account}" target="_blank" class="submissionsLink">${account}</a></div>
                             <div class="column maincolumn">${time}</div>
                           </div>`
 }

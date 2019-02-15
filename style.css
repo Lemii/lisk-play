@@ -81,6 +81,10 @@ h1 {
   -webkit-animation: colorchange 1s infinite alternate;
 }
 
+.submissionsLink {
+  color: inherit;
+}
+
 @-webkit-keyframes colorchange {
   0% {
     color: #FFFFFF;
