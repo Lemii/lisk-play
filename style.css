@@ -157,10 +157,21 @@ a:hover {
   float: left;
   padding: 6px;
   font-size: 14px;
+}
+
+.maincolumn {
   width: 33%;
 }
 
-.row:nth-of-type(odd) {
+.overlaycolumn {
+  width: 25%;
+}
+
+.overlayrow {
+  width: 100%;
+}
+
+.mainrow:nth-of-type(odd) {
   background: #f8f8f8;
 }
 
@@ -170,6 +181,11 @@ a:hover {
   clear: both;
 }
 
+/* @media screen and (max-width: 600px) {
+  .overlaycolumn {
+    font-size: 0.75em;
+  }
+} */
 .button {
   border-radius: 4px;
   background-color: white;
@@ -241,6 +257,8 @@ canvas {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 700px;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  font-size: 14px;
 }

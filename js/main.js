@@ -171,10 +171,10 @@ function displaySubmission(ts, account, prediction) {
   const realTs = (ts + lisk.constants.EPOCH_TIME_SECONDS) * 1000;
   const time = new Date(realTs).toLocaleString();
 
-  resultPage.innerHTML += `<div class="row">
-                            <div class="column"><span class="strong">${prediction}</span></div>
-                            <div class="column">${account}</div>
-                            <div class="column">${time}</div>
+  resultPage.innerHTML += `<div class="row mainrow">
+                            <div class="column maincolumn"><span class="strong">${prediction}</span></div>
+                            <div class="column maincolumn">${account}</div>
+                            <div class="column maincolumn">${time}</div>
                           </div>`
 }
 
@@ -254,16 +254,33 @@ function closeContest(submissions) {
   })
 
   submissionList = submissionList.sort(compare_diffs)
+  let winnersDisplay = "";
+
+  // submissionList.forEach(submission => submissionListDisplay += `${submission.account}\t${submission.prediction}\t${submission.diff}<br />`)
+  for (let i = 0; i < displayResultAmount; i++) {
+    winnersDisplay += `
+    <div class="row overlayrow">
+      <div class="column overlaycolumn">#${i + 1}</span></div>
+      <div class="column overlaycolumn">${submissionList[i].account}</div>
+      <div class="column overlaycolumn">${submissionList[i].prediction}</div>
+      <div class="column overlaycolumn">∆ $${submissionList[i].diff}</div>
+    </div>`
+  }
+
   const overlayContent = document.getElementById("overlaycontent");
   overlayContent.innerHTML = `
-										<h2>THE DEADLINE HAS PASSED AND SUBMISSIONS ARE CLOSED!</h2>
-                    <br /><br />
+										<h2>The opening price of Bitcoin on ${predictionDate} was: $${btcPrice}</h2><br /><br />
 										<h1 class="winner">Winning prediction:<br />
 										<img src="assets//party02_medium.png" /> ${submissionList[0].prediction} <img src="assets//party02_medium.png" /></h1>
-                    <span class="winner">by ${submissionList[0].account}</span><br /><br /><br /><br />
-
-										<h3>The opening price of Bitcoin on ${predictionDate} was: $${btcPrice}</h3>
-                    <span class="small">(difference: $${submissionList[0].diff})</span>`;
+                    <span class="winner">by ${submissionList[0].account}</span><br /><br /><br />
+                    <h2>Top ${displayResultAmount}</h2>
+                    <div class="row overlayrow">
+                      <div class="column overlaycolumn"><h3>Place</h3></div>
+                      <div class="column overlaycolumn"><h3>Account</h3></div>
+                      <div class="column overlaycolumn"><h3>Prediction</h3></div>
+                      <div class="column overlaycolumn"><h3>Difference</h3></div>
+                    </div>
+                    ${winnersDisplay}`;
 }
 
 

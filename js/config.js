@@ -10,6 +10,7 @@ const bonusCap = 50; // Maximum provided bonus (in LSK)
 const startingDate = '2019/02/01';
 const predictionDate = '2019/03/01';
 const deadlineDate = '2019/02/16';
+const displayResultAmount = 10;
 
 // Enables the option to manually close the contest
 // and display the results in an overlay
