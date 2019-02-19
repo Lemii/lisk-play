@@ -1,8 +1,9 @@
-const deadlineTs = Date.parse(deadlineDate);
-const predictionTs = Date.parse(predictionDate);
+const deadlineTs = Date.parse(deadlineDate + 'T00:00:00.000Z');
+const predictionTs = Date.parse(predictionDate + 'T00:00:00.000Z');
 const currentTs = Date.now();
 const APIClient = initNetwork();
 let placedBets = [];
+
 
 function initNetwork() {
   if (network === 'testnet') {
@@ -94,7 +95,6 @@ function setupDates() {
   deadlineField1.innerHTML = deadlineDate;
   deadlineField2.innerHTML = deadlineDate;
   startingField.innerHTML = startingDate;
-
 }
 
 
@@ -182,7 +182,6 @@ function displaySubmission(ts, account, prediction) {
 
 function getTransactionsInfo() {
   const liskEpoch = lisk.constants.EPOCH_TIME_SECONDS;
-  const deadlineTs = Date.parse(deadlineDate) / 1000;
   return APIClient.transactions.get({
     recipientId: betAddres,
     minAmount: betFee * 10000000,

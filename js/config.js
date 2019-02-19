@@ -7,9 +7,9 @@ const minBet = 10; // The mininum value of the prediction
 const maxBet = 7500; // The maximum value of the prediction
 const betAddres = '722054451264511310L'; // Address that is created for the contest
 const bonusCap = 50; // Maximum provided bonus (in LSK)
-const startingDate = '2019/02/01';
-const predictionDate = '2019/03/01';
-const deadlineDate = '2019/02/16';
+const startingDate = '2019-02-01';
+const predictionDate = '2019-03-01';
+const deadlineDate = '2019-02-16';
 const displayResultAmount = 10;
 
 // Enables the option to manually close the contest
