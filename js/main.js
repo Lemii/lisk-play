@@ -86,15 +86,16 @@ function updateManualBetInfo(betValue = maxBet / 2) {
 function setupDates() {
   const predictionField1 = document.getElementById("predictionDate1");
   const predictionField2 = document.getElementById("predictionDate2");
-  const deadlineField1 = document.getElementById("deadlineDate1");
+  const headerInfo = document.getElementById("headerInfo");
   const deadlineField2 = document.getElementById("deadlineDate2");
   const startingField = document.getElementById("startingDate");
 
   predictionField1.innerHTML = predictionDate;
   predictionField2.innerHTML = predictionDate;
-  deadlineField1.innerHTML = deadlineDate;
+  headerInfo.innerHTML = `Submission deadline <strong>${deadlineDate}</strong>`;
   deadlineField2.innerHTML = deadlineDate;
   startingField.innerHTML = startingDate;
+
 }
 
 
@@ -269,18 +270,29 @@ function closeContest(submissions) {
 
   const overlayContent = document.getElementById("overlaycontent");
   overlayContent.innerHTML = `
-										<h2>The opening price of Bitcoin on ${predictionDate} was: $${btcPrice}</h2><br /><br />
-										<h1 class="winner">Winning prediction:<br />
-										<img src="assets//party02_medium.png" /> ${submissionList[0].prediction} <img src="assets//party02_medium.png" /></h1>
-                    <span class="winner">by ${submissionList[0].account}</span><br /><br /><br />
-                    <h2>Top ${displayResultAmount}</h2>
-                    <div class="row overlayrow">
-                      <div class="column overlaycolumn"><h3>Place</h3></div>
-                      <div class="column overlaycolumn"><h3>Account</h3></div>
-                      <div class="column overlaycolumn"><h3>Prediction</h3></div>
-                      <div class="column overlaycolumn"><h3>Difference</h3></div>
-                    </div>
-                    ${winnersDisplay}`;
+                    <div class="fade fadeIn">
+                      <h2>The opening price of Bitcoin on ${predictionDate} was...</h2>
+                      <h1>🥁</h1>
+                    </div>`;
+
+  setTimeout(function() {
+    overlayContent.innerHTML = `
+                      <div class="breath">
+                        <h1 class="animated">🎉 $${btcPrice} 🎉</h1>
+                        <h2 class="animated">Winner: ${submissionList[0].account} (${submissionList[0].prediction})</h2>
+                      </div><br />
+                      <h2 class="nomargin">🏅 Top ${displayResultAmount} 🏅</h2>
+                      <div class="row overlayrow">
+                        <div class="column overlaycolumn"><h3>Place</h3></div>
+                        <div class="column overlaycolumn"><h3>Account</h3></div>
+                        <div class="column overlaycolumn"><h3>Prediction</h3></div>
+                        <div class="column overlaycolumn"><h3>Difference</h3></div>
+                      </div>
+                      ${winnersDisplay}`;
+  }, 4000);
+
+  const headerInfo = document.getElementById("headerInfo");
+  headerInfo.innerHTML = `<strong>CONTEST FINISHED</strong> (<a onclick="loadedOverlayOn()">Results</a>)`;
 }
 
 
@@ -408,4 +420,10 @@ function overlayOff() {
   document.getElementById("overlay").style.display = "none";
   const pagewrapper = document.getElementById("pagewrapper");
   pagewrapper.style.filter = "none";
+}
+
+function loadedOverlayOn() {
+  document.getElementById("overlay").style.display = "block";
+  const pagewrapper = document.getElementById("pagewrapper");
+  pagewrapper.style.filter = "blur(10px)";
 }

@@ -76,9 +76,9 @@ h1 {
   margin: 10px;
 }
 
-.winner {
+.animated {
   font-weight: bold;
-  -webkit-animation: colorchange 1s infinite alternate;
+  -webkit-animation: colorchange 0.4s infinite alternate;
 }
 
 .submissionsLink {
@@ -90,8 +90,26 @@ h1 {
     color: #FFFFFF;
   }
 
+  /* 50% {
+    color: #ff997c;
+  } */
   100% {
     color: #FF6236;
+  }
+}
+
+.breath {
+  font-weight: bold;
+  -webkit-animation: breathing 1s infinite alternate;
+}
+
+@-webkit-keyframes breathing {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
   }
 }
 
@@ -185,11 +203,6 @@ a:hover {
   clear: both;
 }
 
-/* @media screen and (max-width: 600px) {
-  .overlaycolumn {
-    font-size: 0.75em;
-  }
-} */
 .button {
   border-radius: 4px;
   background-color: white;
@@ -265,4 +278,32 @@ canvas {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   font-size: 14px;
+}
+
+.nomargin {
+  margin: 0px;
+}
+
+.fade {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
